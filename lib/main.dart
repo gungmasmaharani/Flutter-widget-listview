@@ -30,7 +30,7 @@ class BelajarListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("LIST BUAH"),
+        title: Center(child: Text("LIST BUAH", textAlign: TextAlign.center,style: TextStyle( fontSize: 40),)),
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
@@ -39,13 +39,21 @@ class BelajarListView extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               child: Row( children: <Widget>[
                 Container(
-                  height: 100,
-                  width: 100,
-                  child: Image.asset(gambar[index],fit: BoxFit.contain,
-                  width: 100,
-                  height: 100,),
-                ),
-                Container ( child: Column( children:[ Text(buah[index], style: TextStyle(fontSize: 30)),
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100.0),
+          
+                    image: DecorationImage(
+                      image: AssetImage(gambar[index]),
+                      fit: BoxFit.cover,
+                    ),
+                    
+                  ),
+              
+              ),
+              
+                Container (margin: EdgeInsets.only(left: 15), height: 80, width : 200, color: Colors.white60, padding: EdgeInsets.all(0.5), child: Column( children:[ Text(buah[index], style: TextStyle(fontSize: 30)),
                 Text('Keterangan',textAlign: TextAlign.left, style: TextStyle(fontSize: 15,),)],),)
                
                 ],),
